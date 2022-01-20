@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<a href = "{% url 'item-create' %}">CREATE ITEM</a>
+<h1>ITEMS</h1>
+
+
+
+    {% for item in items %}
+        <div>
+        
+            <p> Item name :{{item.name}} <br><br>Item Quantity:{{item.quantity}}<br></p>
+            <a href="{% url 'item-detail' item.pk%}"> VIEW ITEM </a>
+            <hr>
+        </div>
+    {% endfor %}
+
+
+{% endblock content %}

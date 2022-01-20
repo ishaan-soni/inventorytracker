@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> {{item.name}}<br><br> {{item.quantity}}</h1>
+<form method = "post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type = "submit">Submit</button>
+        </form>
+        <a href="{% url "item-delete" item.pk %}"> Delete Item</a>
+
+</hr>
+<a href = "{% url 'item-list'%}"> Back to list</a>
+
+{% endblock content %}
